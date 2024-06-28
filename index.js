@@ -22,7 +22,7 @@ app.use('/api/posts', postRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+connect(process.env.MONGO_URL)
   .then(() => {
     console.log('Connected to MongoDB'); // Log on successful connection
     app.listen(5000, () => {
